@@ -10,9 +10,7 @@ const IndexPage = () => {
       {isAuthenticated ? (
         <div>
           Hello {user.name}{' '}
-          <button onClick={() => logout({ returnTo: process.env.NEXT_PUBLIC_HOME_URI })}>
-            Log Out
-          </button>
+          <button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
         </div>
       ) : (
         <button onClick={() => loginWithRedirect()}>Log In</button>
