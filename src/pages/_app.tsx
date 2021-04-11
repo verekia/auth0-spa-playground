@@ -6,6 +6,8 @@ const App = ({ Component, pageProps }) => (
     clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
     redirectUri={process.env.NEXT_PUBLIC_HOME_URI}
     useRefreshTokens
+    // To make it work on Brave, Safari, privacy browsers that block third-party cookies
+    cacheLocation="localstorage"
   >
     <Component {...pageProps} />
   </Auth0Provider>
